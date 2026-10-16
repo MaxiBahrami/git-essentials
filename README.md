@@ -1,6 +1,11 @@
 # The Git Guide
 
-A small group website about Git and GitHub, made with HTML, CSS and JavaScript.
+A small website about Git and GitHub, made with HTML, CSS and JavaScript by Maximilian Bahrami (@MaxiBahrami). This repository currently records individual work.
+
+## Submission links
+
+- Repository: https://github.com/MaxiBahrami/git-essentials
+- Website (available after GitHub Pages is enabled): https://maxibahrami.github.io/git-essentials/
 
 ## Pages
 
@@ -8,63 +13,60 @@ A small group website about Git and GitHub, made with HTML, CSS and JavaScript.
 - `project.html` – Starting projects, local and remote repositories
 - `changes.html` – Making and sharing changes
 - `branching.html` – Branches, pull requests, reviews and merge conflicts
-- `about.html` – Group members (add your own names and GitHub usernames)
+- `about.html` – Project and author
 
-Styles are in `assets/style.css`. The JavaScript in `assets/script.js` handles the mobile menu and copy buttons.
+Shared styles are in `assets/style.css`. `assets/script.js` handles the mobile menu and code copy buttons. No dependencies or build step are needed.
 
-## Open the website
-
-Open `index.html` in a browser. The website does not need any installation or build step.
-
-## Put the website on GitHub
-
-Create an empty repository on GitHub and copy its URL. In the project folder, run:
+## Run locally
 
 ```bash
-git init
-git branch -M main
-git add .
-git commit -m "Add website pages"
-git remote add origin https://github.com/USERNAME/git-guide.git
-git push -u origin main
+git clone https://github.com/MaxiBahrami/git-essentials.git
+cd git-essentials
+python3 -m http.server 8000
 ```
 
-Replace `USERNAME` with the GitHub account name. If the group already has a shared repository, clone that repository instead of creating a second one.
+Open http://localhost:8000. Stop the server with Ctrl+C. You can also open `index.html` directly, but clipboard access may be unavailable. If copying is blocked, select the code and copy it manually.
 
 ## Publish with GitHub Pages
 
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose `main` and `/(root)`, then save.
-5. Find the published website address under GitHub Pages. For a project repository it will usually look like `https://USERNAME.github.io/git-guide/`.
+1. Open https://github.com/MaxiBahrami/git-essentials/settings/pages while signed in as the repository owner.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Choose `main` and `/(root)`, then save.
+4. Wait for the Pages deployment to finish, then open the website link above.
+5. Check all five pages on the published site before submitting.
 
-## Working as a group
-
-Each member should do the Git tasks themselves so they show up in the GitHub history.
+## Make a change
 
 ```bash
-git clone https://github.com/USERNAME/git-guide.git
-cd git-guide
-git switch -c feature/my-page
-# Make a change to a file
-git add .
-git commit -m "Update my page"
-git push -u origin feature/my-page
+git switch main
+git pull origin main
+git switch -c fix/describe-the-change
+# Edit and check the affected files
+git status
+git diff
+git add path/to/changed-file
+git commit -m "Describe the change"
+git push -u origin fix/describe-the-change
 ```
 
-Open a pull request on GitHub, ask someone else to review it, and merge the branch when the changes are ready. Each member also needs to review another person's pull request and merge a branch. Remember to pull the latest `main` before starting new work.
+Open a pull request into `main` and explain the change and checks performed. If the assignment requires collaboration, another real student must review the work using their own account. Do not invent contributors or reviews.
 
-If two people edit the same part of a file, Git may report a merge conflict. Read both changes, decide what to keep, remove the conflict markers, test the page and commit the resolved file.
+## Verification recorded on 16 October 2026
+
+- All five HTML pages have working local file references and fragment targets, one main heading and the correct active navigation link.
+- JavaScript syntax passes. Menu state changes and copy success/failure feedback pass checks with a simulated DOM.
+- Responsive CSS is present for mobile and desktop, including scrollable code blocks and tables. Visual browser checks at both sizes are still required; source checks alone do not confirm the layout.
+- GitHub and GitHub Docs external links returned HTTP 200. The Git documentation URL returned HTTP 403 from the checking environment, so its availability needs a manual browser check.
+- Existing history includes the initial commit and merged PR #1 from `feature/update-about-page`. PR #1 has no submitted review.
+- The expected Pages URL returned HTTP 404 at the time of checking. Publication is not yet verified.
 
 ## Before submitting
 
-- [ ] Replace the example team members and usernames in `about.html`.
-- [ ] Check the five pages on a phone-sized screen and on desktop.
-- [ ] Check all links, examples and spelling.
-- [ ] Confirm each member has created a branch, commit and pull request, reviewed someone else's code and merged a branch.
-- [ ] Confirm the GitHub Pages link is working.
-- [ ] One person submits the repository link and live website link.
+- [ ] Enable GitHub Pages from `main` / `/(root)` and confirm the deployment succeeds.
+- [ ] Open every page at desktop and phone widths; check for horizontal page overflow.
+- [ ] Test the mobile menu, keyboard navigation, code copy buttons and all external links in a browser.
+- [ ] Check the actual assignment instructions with the teacher: individual work is recorded here. If group participation, individual branches/commits/PRs, reviews by another student, or a demonstrated merge conflict are required, those must be completed genuinely or explicitly waived. A conflict example in a guide is not evidence of resolving a real conflict.
+- [ ] Submit the repository link and the working Pages link.
 
 ## References
 
