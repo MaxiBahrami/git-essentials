@@ -5,7 +5,7 @@ A small website about Git and GitHub, made with HTML, CSS and JavaScript by Maxi
 ## Submission links
 
 - Repository: https://github.com/MaxiBahrami/git-essentials
-- Website (available after GitHub Pages is enabled): https://maxibahrami.github.io/git-essentials/
+- Live website: https://maxibahrami.github.io/git-essentials/
 
 ## Pages
 
@@ -55,15 +55,18 @@ Open a pull request into `main` and explain the change and checks performed. If 
 
 - All five HTML pages have working local file references and fragment targets, one main heading and the correct active navigation link.
 - JavaScript syntax passes. Menu state changes and copy success/failure feedback pass checks with a simulated DOM.
-- Responsive CSS is present for mobile and desktop, including scrollable code blocks and tables. Visual browser checks at both sizes are still required; source checks alone do not confirm the layout.
+- All five published pages were visually checked at desktop width (1348 CSS pixels of content), with no horizontal page overflow. Responsive CSS is present, but phone-width visual checks are still required.
+- Live click, clipboard and keyboard checks could not be completed because the test browser restricted interactions after sign-in. The simulated JavaScript checks above do not replace those live checks.
 - GitHub and GitHub Docs external links returned HTTP 200. The Git documentation URL returned HTTP 403 from the checking environment, so its availability needs a manual browser check.
 - Existing history includes the initial commit and merged PR #1 from `feature/update-about-page`. PR #1 has no submitted review.
-- The expected Pages URL returned HTTP 404 at the time of checking. Publication is not yet verified.
+- GitHub Pages is enabled using **Deploy from a branch**, `main`, `/(root)`. The [Pages deployment](https://github.com/MaxiBahrami/git-essentials/actions/runs/38930456428) succeeded.
+- The live root URL, all five HTML pages, CSS and JavaScript returned HTTP 200 after publication.
 
 ## Before submitting
 
-- [ ] Enable GitHub Pages from `main` / `/(root)` and confirm the deployment succeeds.
-- [ ] Open every page at desktop and phone widths; check for horizontal page overflow.
+- [x] Enable GitHub Pages from `main` / `/(root)` and confirm the deployment succeeds.
+- [x] Check all five published pages at desktop width for layout and horizontal page overflow.
+- [ ] Check all five pages at phone widths for layout and horizontal page overflow.
 - [ ] Test the mobile menu, keyboard navigation, code copy buttons and all external links in a browser.
 - [ ] Check the actual assignment instructions with the teacher: individual work is recorded here. If group participation, individual branches/commits/PRs, reviews by another student, or a demonstrated merge conflict are required, those must be completed genuinely or explicitly waived. A conflict example in a guide is not evidence of resolving a real conflict.
 - [ ] Submit the repository link and the working Pages link.
