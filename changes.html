@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn the repeatable workflow for updating code safely and sharing your work.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Making changes | The Git Guide</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script defer src="assets/script.js"></script>
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner"><a class="brand" href="index.html"><span class="brand-icon"
+                    aria-hidden="true">&lt;/&gt;</span>The Git Guide</a><button class="menu-toggle" type="button"
+                aria-expanded="false" aria-controls="main-nav">Menu ☰</button>
+            <nav class="nav" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a
+                    href="project.html">Projects</a><a href="changes.html" aria-current="page">Changes</a><a
+                    href="branching.html">Branching</a><a href="about.html">About us</a></nav>
+        </div>
+    </header>
+    <main id="main">
+        <div class="page-hero">
+            <div class="container">
+                <div class="eyebrow">THE GIT GUIDE / LEARN</div>
+                <h1>Making changes</h1>
+                <p class="lead">Learn the repeatable workflow for updating code safely and sharing your work.</p>
+            </div>
+        </div>
+        <div class="container content-layout">
+            <aside class="toc" aria-label="On this page"><strong>On this page</strong><a href="#workflow">The everyday
+                    workflow</a><a href="#update">Get the latest changes</a><a href="#save">Stage and commit your
+                    work</a><a href="#share">Push a feature branch</a><a href="#fix">Useful commands and common
+                    mistakes</a></aside>
+            <article class="article">
+                <section id="workflow">
+                    <h2>The everyday workflow</h2>
+                    <p>The normal loop is <strong>pull → edit → check → stage → commit → push → open PR</strong>. Each
+                        commit should describe one meaningful change. Work in a feature branch when collaborating.</p>
+                </section>
+                <section id="update">
+                    <h2>Get the latest changes</h2>
+                    <p>Before starting a new feature, return to the main branch and bring it up to date.</p>
+                    <div class="code-wrap">
+                        <div class="code-head"><span>Terminal</span><button class="copy-btn" type="button"
+                                aria-label="Copy code">Copy</button></div>
+                        <pre><code>git switch main
+git pull origin main
+git switch -c feature/contact-section</code></pre>
+                    </div>
+                    <p><code>git fetch origin</code> only downloads remote updates; <code>git pull</code> downloads and
+                        integrates them. Pull may merge or rebase depending on your configuration.</p>
+                </section>
+                <section id="save">
+                    <h2>Stage and commit your work</h2>
+                    <p>After editing files, inspect your changes. Stage specific files when possible, then commit with a
+                        clear message.</p>
+                    <div class="code-wrap">
+                        <div class="code-head"><span>Terminal</span><button class="copy-btn" type="button"
+                                aria-label="Copy code">Copy</button></div>
+                        <pre><code>git status
+git diff
+git add index.html assets/style.css
+git diff --staged
+git commit -m &quot;Add responsive navigation&quot;
+git log --oneline -5</code></pre>
+                    </div>
+                    <p><code>git add .</code> stages all changes in the current directory and below; review
+                        <code>git status</code> first so you do not include unintended files.</p>
+                </section>
+                <section id="share">
+                    <h2>Push a feature branch</h2>
+                    <p>Share your commits with GitHub so teammates can review them.</p>
+                    <div class="code-wrap">
+                        <div class="code-head"><span>Terminal</span><button class="copy-btn" type="button"
+                                aria-label="Copy code">Copy</button></div>
+                        <pre><code>git push -u origin feature/contact-section</code></pre>
+                    </div>
+                    <p>On GitHub, select <strong>Compare & pull request</strong>. Write a short summary, select
+                        <code>main</code> as the base, and request a review. After approval, merge the PR using the
+                        GitHub interface.</p>
+                </section>
+                <section id="fix">
+                    <h2>Useful commands and common mistakes</h2>
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>When to use it</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>git status</code></td>
+                                    <td>Check the branch and pending changes.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git diff</code></td>
+                                    <td>Inspect unstaged edits.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git restore file.html</code></td>
+                                    <td>Discard unstaged changes to a tracked file; use carefully.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git restore --staged file.html</code></td>
+                                    <td>Unstage a file without discarding its edits.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git log --oneline</code></td>
+                                    <td>See concise commit history.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git stash</code></td>
+                                    <td>Temporarily store uncommitted work.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git stash pop</code></td>
+                                    <td>Reapply and usually remove the latest stash.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout"><strong>Important:</strong> Never commit passwords, API keys, or private files.
+                        Add local secrets to <code>.gitignore</code> before staging them. If you already committed a
+                        secret, rotating it is necessary; merely deleting the file later does not erase it from history.
+                    </div>
+                </section>
+                <div class="next"><a href="index.html">← Back to home</a></div>
+            </article>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>The Git Guide · Version control project</span><span><a
+                    href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">Git documentation</a><a
+                    href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">GitHub Docs</a></span>
+        </div>
+    </footer>
+</body>
+
+</html>

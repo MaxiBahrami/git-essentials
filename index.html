@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A beginner-friendly guide to Git and GitHub.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Home | The Git Guide</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script defer src="assets/script.js"></script>
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner"><a class="brand" href="index.html"><span class="brand-icon"
+                    aria-hidden="true">&lt;/&gt;</span>The Git Guide</a><button class="menu-toggle" type="button"
+                aria-expanded="false" aria-controls="main-nav">Menu ☰</button>
+            <nav class="nav" id="main-nav" aria-label="Main navigation"><a href="index.html"
+                    aria-current="page">Home</a><a href="project.html">Projects</a><a href="changes.html">Changes</a><a
+                    href="branching.html">Branching</a><a href="about.html">About us</a></nav>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container hero">
+            <div>
+                <div class="eyebrow">GIT & GITHUB BASICS</div>
+                <h1>A beginner’s guide<br>to Git and GitHub</h1>
+                <p class="lead">This website explains the Git commands we use to save our work, share code and work
+                    together on group projects.</p>
+                <div class="actions"><a class="btn" href="project.html">Start learning →</a><a class="btn secondary"
+                        href="branching.html">Explore branching</a></div>
+            </div>
+            <div class="terminal">
+                <div class="term-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span
+                        class="term-label">your-project — terminal</span></div>
+                <pre><span class="comment"># Start with a new branch</span>
+<span class="prompt">$</span> git switch -c feature/homepage
+<span class="comment"># Save your progress</span>
+<span class="prompt">$</span> git add .
+<span class="prompt">$</span> git commit -m "Build homepage"
+<span class="comment"># Share your work</span>
+<span class="prompt">$</span> git push -u origin feature/homepage</pre>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div class="eyebrow">THE ESSENTIALS</div>
+                    <h2>What you can learn here</h2>
+                    <p class="section-desc">Read the pages in order, or choose the topic you need help with.</p>
+                </div>
+                <div class="cards"><a class="card" href="project.html"><span class="number">01 / SETUP</span>
+                        <h3>Projects & repositories</h3>
+                        <p>Create a local repository, connect it to GitHub, and invite collaborators.</p><span
+                            class="arrow">Explore guide →</span>
+                    </a><a class="card" href="changes.html"><span class="number">02 / WORKFLOW</span>
+                        <h3>Making changes</h3>
+                        <p>Stage, commit, pull, and push updates without losing your progress.</p><span
+                            class="arrow">Explore guide →</span>
+                    </a><a class="card" href="branching.html"><span class="number">03 / COLLABORATION</span>
+                        <h3>Branches & reviews</h3>
+                        <p>Work independently, open pull requests, and resolve conflicts.</p><span class="arrow">Explore
+                            guide →</span>
+                    </a></div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="eyebrow">THE BIG PICTURE</div>
+                <h2>Git versus GitHub</h2>
+                <div class="cards">
+                    <div class="card"><span class="number">LOCAL TOOL</span>
+                        <h3>Git</h3>
+                        <p>A version control system that tracks file changes and lets you revisit earlier versions on
+                            your computer.</p>
+                    </div>
+                    <div class="card"><span class="number">ONLINE PLATFORM</span>
+                        <h3>GitHub</h3>
+                        <p>A hosting and collaboration platform for Git repositories, with issues, pull requests,
+                            reviews, and GitHub Pages.</p>
+                    </div>
+                    <div class="card"><span class="number">TEAMWORK</span>
+                        <h3>Working together</h3>
+                        <p>Everyone can work in a separate branch, discuss proposed changes, and merge reviewed work
+                            into the main project.</p>
+                    </div>
+                </div>
+                <div class="callout"><strong>Remember:</strong> A commit saves a snapshot locally. A push uploads
+                    commits to a remote repository. A pull gets remote updates and integrates them into your current
+                    branch.</div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>The Git Guide · Version control project</span><span><a
+                    href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">Git documentation</a><a
+                    href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">GitHub Docs</a></span>
+        </div>
+    </footer>
+</body>
+
+</html>
